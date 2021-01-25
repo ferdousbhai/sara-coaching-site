@@ -23,44 +23,42 @@ export function Nav() {
             name: 'Store',
             link: 'https://bohemiangoddess.fi/'
         },
-        {
-            name: 'Contact',
-            link: 'mailto:sara@bohemiangoddess.com',
-        },
-        {
-            name: 'Newsletter',
-            link: '#',
-        }
+        // {
+        //     name: 'Contact',
+        //     link: 'mailto:sara@bohemiangoddess.com',
+        // },
+        // {
+        //     name: 'Newsletter',
+        //     link: '#',
+        // }
     ]
 
     return (
-        <nav className="relative flex flex-wrap items-center justify-between px-2 bg-transparent mb-3">
-            <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
-                <div className="w-full relative flex justify-between lg:w-auto  px-4 lg:static lg:block lg:justify-start">
-                    <Link href="/">
-                        <a className="text-sm font-bold leading-relaxed inline-block p-2 mr-4 uppercase">
-                            <h1 className="h-16 w-16 text-lg">
-                                Sara Adolfsen
+        <nav className="relative container px-4 mx-auto flex flex-wrap items-center justify-between">
+            <div className="w-full relative flex justify-between md:w-auto  px-4 md:static md:block md:justify-start">
+                <Link href="/">
+                    <a className="text-sm font-bold leading-relaxed inline-block p-2 mr-4 hover:opacity-50">
+                        <h1 className="h-16 w-16 text-lg">
+                            Sara Adolfsen
                             </h1>
 
-                        </a>
-                    </Link>
-                </div>
-                <div className="lg:flex items-center">
-                    <div className="flex flex-col lg:flex-row list-none ml-auto">
-                        {navLinkItems.map((item, index) => (
-                            <Link key={index} href={item.link}>
-                                <a className="mx-3 px-4 py-2 flex items-center text-xs uppercase font-bold leading-snug hover:opacity-50">
-                                    {item.page}
-                                </a>
-                            </Link>
-                        ))}
-                        {navAnchorItems.map((item, index) => (
-                            <a key={index} href={item.link} className="mx-3 px-4 py-2 flex items-center text-xs uppercase font-bold leading-snug hover:opacity-50">
-                                {item.name}
+                    </a>
+                </Link>
+            </div>
+            <div className="md:flex items-center">
+                <div className="flex flex-col md:flex-row list-none ml-auto">
+                    {navLinkItems.map((item, index) => (
+                        <Link key={index} href={item.link}>
+                            <a className="mx-3 px-4 py-2 flex items-center text-xs uppercase font-bold leading-snug hover:opacity-50">
+                                {item.page}
                             </a>
-                        ))}
-                    </div>
+                        </Link>
+                    ))}
+                    {navAnchorItems.map((item, index) => (
+                        <a key={index} href={item.link} className="mx-3 px-4 py-2 flex items-center text-xs uppercase font-bold leading-snug hover:opacity-50">
+                            {item.name}
+                        </a>
+                    ))}
                 </div>
             </div>
 
@@ -74,7 +72,6 @@ export function Nav() {
                         }
             `} </style>
 
-
-        </nav >
+        </nav>
     )
 }

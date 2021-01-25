@@ -51,7 +51,7 @@ export default function Post({ post }) {
             }
 
         const script = document.createElement('script')
-        script.src = 'https://sara-gz2rsninm0.disqus.com/embed.js'
+        script.src = 'https://www-saraadolfsen-com.disqus.com/embed.js'
         script.setAttribute('data-timestamp', Date.now().toString())
 
         document.body.appendChild(script)
@@ -60,28 +60,26 @@ export default function Post({ post }) {
     return (
         <div>
             <Nav />
-            <main>
-                <article className="prose">
-                    <h1>{post.title}</h1>
-                    <div
-                        className="max-w-full box-border"
-                        dangerouslySetInnerHTML={{ __html: post.html }}
+            <div className="container prose p-4 mx-auto flex flex-col">
+                <h1 className="pt-6">{post.title}</h1>
+                <div
+                    className="max-w-screen-md box-border"
+                    dangerouslySetInnerHTML={{ __html: post.html }}
+                >
+                </div>
+
+                {enableLoadComments &&
+                    <button
+                        className="bg-pink-300 hover:bg-pink-400 text-pink-800 font-bold py-2 px-4 rounded"
+                        onClick={loadComments}
                     >
-                    </div>
-
-                    {enableLoadComments &&
-                        <p className="" onClick={loadComments}>
-                            Load comments.
-                        </p>
-                    }
-
-                    <div id="disqus_thread">
-                        {/* Loads disqus commenting section */}
-                    </div>
-
-                </article>
-            </main>
-
+                        <span>Share your thoughts ⇣ ⇣</span>
+                    </button>
+                }
+                <div id="disqus_thread">
+                    {/* Loads disqus commenting section */}
+                </div>
+            </div>
 
         </div>
     )

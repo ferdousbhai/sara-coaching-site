@@ -12,11 +12,11 @@ async function getPosts() {
   const res = await fetch(
     `${BLOG_URL}/ghost/api/v3/content/posts?key=${CONTENT_API_KEY}&fields=title,slug`
   ).then(res => res.json())
-  // returns an object with 'posts' key that contain an array of posts
+  // returns an object with 'posts' key that contain an array of post objects
   return res.posts
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps() {
   const posts = await getPosts()
   return {
     props: { posts },
@@ -81,7 +81,6 @@ export default function Home({ posts }) {
       </div>
 
       <Articles posts={posts} />
-
       <Footer />
 
     </>
