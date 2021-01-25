@@ -6,26 +6,7 @@ import { Footer } from '../components/Footer.js'
 import { Articles } from '../components/Articles.js'
 import { Social } from '../components/Social.js'
 
-const { BLOG_URL, CONTENT_API_KEY } = process.env
-
-async function getPosts() {
-  const res = await fetch(
-    `${BLOG_URL}/ghost/api/v3/content/posts?key=${CONTENT_API_KEY}&fields=title,slug`
-  ).then(res => res.json())
-  // returns an object with 'posts' key that contain an array of post objects
-  return res.posts
-}
-
-export async function getStaticProps() {
-  const posts = await getPosts()
-  return {
-    props: { posts },
-    revalidate: 10 //make a request to CMS backend every 10s
-  }
-}
-
-export default function Home({ posts }) {
-
+export default function Home() {
   return (
     <>
       <Head>
@@ -80,7 +61,7 @@ export default function Home({ posts }) {
         <GoddessTest />
       </div>
 
-      <Articles posts={posts} />
+      <Articles />
       <Footer />
 
     </>

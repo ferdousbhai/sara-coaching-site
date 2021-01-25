@@ -1,8 +1,11 @@
 import 'tailwindcss/tailwind.css'
+import PostsProvider from '../context/PostContext';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Component {...pageProps} />
+    <PostsProvider>
+      <Component {...pageProps} />
+    </PostsProvider>
   )
 }
 
