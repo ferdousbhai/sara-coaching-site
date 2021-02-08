@@ -35,13 +35,13 @@ export function Nav() {
     ]
 
     return (
-        <nav className="relative container px-4 mx-auto flex flex-wrap items-center justify-between">
+        <nav className="relative container px-4 mx-auto flex md:flex-wrap items-center justify-between">
             <div className="w-full relative flex justify-between md:w-auto  px-4 md:static md:block md:justify-start">
                 <Link href="/">
                     <a className="text-sm font-bold leading-relaxed inline-block p-2 mr-4 hover:opacity-50">
-                        <h1 className="h-16 w-16 text-lg">
+                        <h1 className="text-lg">
                             Sara Adolfsen
-                            </h1>
+                        </h1>
 
                     </a>
                 </Link>
@@ -51,13 +51,13 @@ export function Nav() {
                     <Social />
                     {navLinkItems.map((item, index) => (
                         <Link key={index} href={item.link}>
-                            <a className="mx-3 px-4 py-2 flex items-center text-xs uppercase font-bold leading-snug hover:opacity-50">
+                            <a className="px-4 py-2 flex items-center text-xs uppercase font-bold leading-snug hover:opacity-50">
                                 {item.page}
                             </a>
                         </Link>
                     ))}
                     {navAnchorItems.map((item, index) => (
-                        <a key={index} href={item.link} className="mx-3 px-4 py-2 flex items-center text-xs uppercase font-bold leading-snug hover:opacity-50">
+                        <a key={index} href={item.link} className="px-4 py-2 flex items-center text-xs uppercase font-bold leading-snug hover:opacity-50">
                             {item.name}
                         </a>
                     ))}

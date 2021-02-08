@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
+import { useRouter } from 'next/router'
 import { Nav } from '../../components/Nav.js'
 import { Footer } from '../../components/Footer.js'
-import { useRouter } from 'next/router'
 
 const { BLOG_URL, CONTENT_API_KEY } = process.env
 
@@ -61,8 +61,9 @@ export default function Post({ post }) {
     return (
         <div>
             <Nav />
-            <article className="container prose p-4 mx-auto flex flex-col">
+            <article className="container prose lg:prose-xl p-4 mx-auto flex flex-col">
                 <h1 className="pt-6">{post.title}</h1>
+                <img src={post.feature_image} alt="" />
                 <div
                     className="max-w-screen-md box-border"
                     dangerouslySetInnerHTML={{ __html: post.html }}

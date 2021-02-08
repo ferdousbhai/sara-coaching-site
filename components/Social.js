@@ -3,7 +3,7 @@ import React from 'react'
 export function Social() {
     return (
 
-        <div className="flex items-center space-x-8 mx-4">
+        <div className="flex items-center space-x-4 px-4 py-2">
             <a
                 href="https://www.facebook.com/SpiritualCoachSara"
                 className="hover:opacity-50"

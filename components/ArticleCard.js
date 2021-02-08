@@ -1,16 +1,21 @@
 import React from 'react'
 
-export function ArticleCard({ title, excerpt, feature_image }) {
+export function ArticleCard({ title, feature_image, excerpt }) {
     return (
-        <div className="flex flex-col items-end justify-end relative max-w-sm h-96 m-4 rounded overflow-hidden shadow-lg">
-            <img className="w-full h-auto" src={feature_image} />
-            <div className="absolute px-6 py-4 bg-red-50">
-                <div className="font-bold text-xl mb-2">{title}</div>
-                <p className="text-gray-700 text-base">
-                    {excerpt}
-                </p>
+        <div className="max-w-screen-lg w-full lg:flex">
+            <div
+                className="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style={{ backgroundImage: `url(${feature_image})` }} title={title}
+            >
             </div>
-        </div>
+            <div className="border-r border-b border-l border-grey-light lg:border-l-0 lg:border-t lg:border-grey-light bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+                <div className="mb-8">
+                    <div className="text-black font-bold text-xl mb-2">{title}</div>
+                    <p className="text-grey-darker text-base">
+                        {excerpt}
+                    </p>
+                </div>
+            </div>
+        </div >
     )
 }
 

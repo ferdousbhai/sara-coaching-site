@@ -29,7 +29,7 @@ export default function Home() {
                 AWAKEN YOUR INNER GODDESS
               </h2>
             </header>
-            <p>
+            <p className="text-gray-900">
               Are you ready to claim your own power, freedom and pleasure? Are you ready to fall in love with yourself? Find out how I can help you become empowered.
             </p>
           </article>
