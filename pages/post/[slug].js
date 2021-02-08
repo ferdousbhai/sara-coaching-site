@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { Nav } from '../../components/Nav'
+import { Nav } from '../../components/Nav.js'
+import { Footer } from '../../components/Footer.js'
 import { useRouter } from 'next/router'
 
 const { BLOG_URL, CONTENT_API_KEY } = process.env
@@ -8,11 +9,11 @@ async function getPost(slug) {
     const res = await fetch(
         `${BLOG_URL}/ghost/api/v3/content/posts/slug/${slug}?key=${CONTENT_API_KEY}&fields=title,slug,feature_image,html`
     ).then(res => res.json())
-    // returns an object with 'posts' key that contain an array of posts; only one item in this array.
+    // returns an object with 'posts' key that contain an array of posts; only one item in this array matching the slug.
     return res.posts[0]
 }
 
-//Ghost CMS request
+// Ghost CMS request
 export async function getStaticProps({ params }) {
     const post = await getPost(params.slug)
     return {
@@ -60,7 +61,7 @@ export default function Post({ post }) {
     return (
         <div>
             <Nav />
-            <div className="container prose p-4 mx-auto flex flex-col">
+            <article className="container prose p-4 mx-auto flex flex-col">
                 <h1 className="pt-6">{post.title}</h1>
                 <div
                     className="max-w-screen-md box-border"
@@ -79,7 +80,8 @@ export default function Post({ post }) {
                 <div id="disqus_thread">
                     {/* Loads disqus commenting section */}
                 </div>
-            </div>
+            </article>
+            <Footer />
 
         </div>
     )

@@ -1,16 +1,17 @@
 import React from 'react'
 import Link from 'next/link'
+import { Social } from './Social.js'
 
 export function Nav() {
 
     const navLinkItems = [
         {
-            page: 'About',
-            link: '/about'
+            page: 'Coaching',
+            link: '/coaching'
         },
         {
-            page: 'Services',
-            link: '/services',
+            page: 'Retreats',
+            link: '/retreats',
         },
         {
             page: 'Blog',
@@ -47,6 +48,7 @@ export function Nav() {
             </div>
             <div className="md:flex items-center">
                 <div className="flex flex-col md:flex-row list-none ml-auto">
+                    <Social />
                     {navLinkItems.map((item, index) => (
                         <Link key={index} href={item.link}>
                             <a className="mx-3 px-4 py-2 flex items-center text-xs uppercase font-bold leading-snug hover:opacity-50">

@@ -3,18 +3,18 @@ import React from 'react'
 export function Social() {
     return (
 
-        <div className="flex items-center">
+        <div className="flex items-center space-x-8 mx-4">
             <a
                 href="https://www.facebook.com/SpiritualCoachSara"
                 className="hover:opacity-50"
             >
-                <img className="mr-4" src="facebook.png" alt="facebook" />
+                <img src="facebook.png" alt="facebook" width="50%" height="50%" />
             </a>
             <a
                 href="https://www.instagram.com/saraadolfsen/"
                 className="hover:opacity-50"
             >
-                <img className="mr-4" src="instagram.png" alt="instagram" />
+                <img src="instagram.png" alt="instagram" width="50%" height="50%" />
             </a>
         </div>
 
