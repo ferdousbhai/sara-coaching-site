@@ -6,6 +6,14 @@ export function Nav() {
 
     const navLinkItems = [
         {
+            page: 'Home',
+            link: '/'
+        },
+        {
+            page: 'About',
+            link: '/about'
+        },
+        {
             page: 'Coaching',
             link: '/coaching'
         },
@@ -24,10 +32,10 @@ export function Nav() {
             name: 'Store',
             link: 'https://bohemiangoddess.fi/'
         },
-        // {
-        //     name: 'Contact',
-        //     link: 'mailto:sara@bohemiangoddess.com',
-        // },
+        {
+            name: 'Contact',
+            link: 'mailto:sara@bohemiangoddess.com',
+        },
         // {
         //     name: 'Newsletter',
         //     link: '#',
@@ -67,7 +75,7 @@ export function Nav() {
             <style jsx>{`
                         @font-face {
                             font-family: 'Zoxi';
-                            src: url('fonts/Fonts-zoxi-regular.ttf');
+                            src: url('/fonts/Fonts-zoxi-regular.ttf');
                         }
                         h1{
                             font-family: 'Zoxi';

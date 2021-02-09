@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
-import { Nav } from '../components/Nav.js'
+import { Layout } from '../components/Layout.js'
 import { ArticleCard } from '../components/ArticleCard.js'
-import { Footer } from '../components/Footer.js'
+
 
 
 const { BLOG_URL, CONTENT_API_KEY } = process.env
@@ -53,11 +53,9 @@ export default function Blog({ posts }) {
     }
 
     return (
-        <div className="flex flex-col h-screen">
-            <Nav />
 
-            <div className="mx-auto flex flex-col p-4">
-
+        <Layout>
+            <main className="mx-auto p-4 flex flex-col flex-grow">
                 {!enableLoadAllPosts &&
                     <div>
                         <h1 className="text-4xl font-extrabold pt-6 pb-6">
@@ -71,10 +69,10 @@ export default function Blog({ posts }) {
 
                 {!enableLoadAllPosts &&
                     <button
-                        className="bg-pink-300 hover:bg-pink-400 text-gray-800 text-xl font-bold py-2 px-4 rounded"
+                        className="text-gray-800 text-xl font-bold py-2 px-4 rounded hover:opacity-50"
                         onClick={loadAllPosts}
                     >
-                        <span>View All Articles ⇣ ⇣</span>
+                        <span className="underline">View All Articles</span>
                     </button>
                 }
 
@@ -82,16 +80,14 @@ export default function Blog({ posts }) {
                     <div>
                         <h1 className="text-4xl font-extrabold pt-6 pb-6">
                             All Articles:
-                        </h1>
+                                </h1>
 
                         {renderPosts(posts)}
 
                     </div>
                 }
+            </main>
+        </Layout>
 
-            </div>
-
-            <Footer />
-        </div >
     )
 }

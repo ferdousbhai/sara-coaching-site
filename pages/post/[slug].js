@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { useRouter } from 'next/router'
-import { Nav } from '../../components/Nav.js'
-import { Footer } from '../../components/Footer.js'
+import { Layout } from '../../components/Layout.js'
 
 const { BLOG_URL, CONTENT_API_KEY } = process.env
 
@@ -59,11 +58,13 @@ export default function Post({ post }) {
     }
 
     return (
-        <div>
-            <Nav />
-            <article className="container prose lg:prose-xl p-4 mx-auto flex flex-col">
+        <Layout>
+            <article className="container prose lg:prose-xl p-4 mx-auto flex flex-col flex-grow">
+
                 <h1 className="pt-6">{post.title}</h1>
-                <img src={post.feature_image} alt="" />
+
+                <img src={post.feature_image} alt={post.title} />
+
                 <div
                     className="max-w-screen-md box-border"
                     dangerouslySetInnerHTML={{ __html: post.html }}
@@ -78,13 +79,12 @@ export default function Post({ post }) {
                         <span>Share your thoughts ⇣ ⇣</span>
                     </button>
                 }
+
                 <div id="disqus_thread">
                     {/* Loads disqus commenting section */}
                 </div>
             </article>
-            <Footer />
-
-        </div>
+        </Layout>
     )
 }
 
